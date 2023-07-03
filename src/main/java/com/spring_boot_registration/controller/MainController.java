@@ -8,11 +8,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class MainController {
 
     @GetMapping("/login")
-    public  String login(){
-        return  "login";
+    public  String login() {
+        return "login";
     }
     @GetMapping("")
     public  String homePage(){
         return "home";
     }
+
 }

@@ -32,8 +32,10 @@
 <div class="container">
     <div class="row">
         <div col-md-6 col-md-offset-3>
+
+
             <h1>User Login Page</h1>
-            <form th:action="@{/login}" method="post ">
+            <form th:action="@{/login}" method="post">
 <!--             handle   error message-->
                 <div th:if="${param.error}">
                     <div class="alert alert-danger">Invalid Username or Password</div>

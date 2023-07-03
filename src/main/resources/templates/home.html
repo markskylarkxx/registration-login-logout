@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head>
     <meta charset="UTF-8">
     <title>Registration and login app</title>
@@ -19,8 +20,14 @@
                 <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="#" th:href="@{/}">Registration and Login Module</a>
-
         </div>
+<!--        log out implementation-->
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li sec:authorize="isAuthenticated()"> <a th:href="@{/logout}">Logout</a></li>
+            </ul>
+        </div>
+
     </div>
 </nav>
 <br>
@@ -37,6 +44,11 @@
         mollitia, necessitatibus nemo nobis placeat quo sapiente tempore unde vel vitae voluptates.</h1>
         mollitia, necessitatibus nemo nobis placeat quo sapiente tempore unde vel vitae voluptates.</h1>
         mollitia, necessitatibus nemo nobis placeat quo sapiente tempore unde vel vitae voluptates.</h1>
+ <br>
+      <br>
+      <br>
+<!--thymeleaf attribute connected to spring security-->
+    Welcome <span sec:authentication = "principal.username"> User </span>
   </div>
 </body>
-</html>
+</html>  
