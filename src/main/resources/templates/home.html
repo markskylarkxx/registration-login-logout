@@ -19,9 +19,11 @@
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#" th:href="@{/}">Registration and Login Module</a>
+            <a class="navbar-brand" href="#" th:href="@{/store}">Registration and Login Module</a>
         </div>
-<!--        log out implementation-->
+
+
+        <!--        log out implementation-->
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li sec:authorize="isAuthenticated()"> <a th:href="@{/logout}">Logout</a></li>
@@ -51,4 +53,4 @@
     Welcome <span sec:authentication = "principal.username"> User </span>
   </div>
 </body>
-</html>  
+</html>

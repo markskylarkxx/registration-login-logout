@@ -23,6 +23,7 @@ public class UserRegController {
     public  UserRegistrationDto userRegistrationDto(){
         return new UserRegistrationDto();
     }
+
       @PostMapping()
     public String registerUser(@ModelAttribute("user")UserRegistrationDto registration){
         userService.saveUser(registration);

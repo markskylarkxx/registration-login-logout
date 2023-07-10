@@ -9,6 +9,7 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
@@ -34,17 +35,35 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-
+//        http
+//                .cors()
+//                .and()
+//                .csrf()
+//                .disable()
+//                .sessionManagement()
+//                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+//                .and()
+//                .authorizeRequests()
+//                .antMatchers("/api/auth/**")
+//                .permitAll()
+//                .antMatchers("/api/**")
+//                .permitAll()
+//                .antMatchers("/api/allBooks").hasRole("USER")
+//                .anyRequest()
+//                .authenticated().and().
+//                 formLogin().loginPage("/login").
+//                 defaultSuccessUrl("/api/home").failureUrl("/login/error").permitAll();
 
         http.authorizeRequests().antMatchers(
                 "/registration",
                 "/js/**",
                 "/css/**", "/img/**").permitAll().
                 anyRequest().authenticated().and().
-                formLogin().loginPage("/login").
+               formLogin().loginPage("/login").
                 permitAll().and().logout().
                 invalidateHttpSession(true).clearAuthentication(true).
                 logoutRequestMatcher(new AntPathRequestMatcher("/logout")).
                 logoutSuccessUrl("/login?logout").permitAll();
+
     }
 }
