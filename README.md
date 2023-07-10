@@ -10,6 +10,11 @@ Form Validation: validate user input on the client side to nesure data integrity
 Error handlingl Provides appropriate error messages to users in case of any error s or invalid inputs.
 Database: The data of the registered users are store in mySQl database. But any other database can be used for this.
 
+![image](https://github.com/markskylarkxx/registration-login-logout/assets/116182042/fb6121dd-260d-4f6a-9e04-cc2da5fc508c)
+
+
+
+
 **Contact**
 If you have any issue or want to get in touch, you can reach me at
 
